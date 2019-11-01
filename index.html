@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GitHub Finder App | JavaScript</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+<body>
+  <header class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">GitHub Finder</h1>
+
+        <h2 class="subtitle">Using the GitHub API to find a user's profile and repositories</h2>
+      </div>
+    </div>
+  </header>
+
+  <section class="section has-background-dark">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <h3 class="title">Search GitHub Users</h3>
+            
+            <div class="field">
+              <label class="label has-text-grey-light" for="username">Enter a username to fetch a user profile and their repos</label>
+
+              <div class="control">
+                <input class="input" type="text" name="username" id="username" placeholder="GitHub Username...">
+              </div>
+            </div>
+          </div>
+
+          <div id="profile"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>GitHub Finder &copy; | <a href="https://github.com/biobot-01/github-finder">View Source</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="github.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
