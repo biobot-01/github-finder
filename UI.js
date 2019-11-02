@@ -19,10 +19,10 @@ class UI {
       <div class="card-content">
         <div class="media">
           <div class="media-left">
-            <figure class="image is-96x96">
+            <figure class="image is-128x128">
               <img src="${user.avatar_url}" alt="Placeholder image">
             </figure>
-            <a class="button is-small is-primary is-fullwidth" style="margin-top:12px;" href="${user.html_url}" target="_blank">View Profile</a>
+            <a class="button is-primary is-fullwidth" style="margin-top:12px;" href="${user.html_url}" target="_blank">View Profile</a>
           </div>
           <div class="media-content">
             <p class="title is-4">${user.name}</p>
@@ -41,8 +41,6 @@ class UI {
             </ul>
           </div>
         </div>
-        <h4>Latest Repos</h4>
-        <ul id="repos"></ul>
       </div>
     `;
   }
