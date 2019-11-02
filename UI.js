@@ -11,6 +11,7 @@
 class UI {
   constructor() {
     this.profile = document.getElementById('profile');
+    this.repos = document.getElementById('repos');
   }
 
   // Display profile in UI
@@ -21,7 +22,7 @@ class UI {
         <div class="media">
           <div class="media-left">
             <figure class="image is-128x128">
-              <img src="${user.avatar_url}" alt="Placeholder image">
+              <img src="${user.avatar_url}" alt="GitHub User Profile Picture">
             </figure>
             <a class="button is-primary is-fullwidth" style="margin-top:12px;" href="${user.html_url}" target="_blank">View Profile</a>
           </div>
@@ -44,6 +45,36 @@ class UI {
         </div>
       </div>
     `;
+  }
+
+  // Display repos in UI
+  showRepos(repos) {
+    // Add box class to repos
+    this.repos.className = 'box';
+    // Create h4
+    const h4 = document.createElement('h4');
+    h4.className = 'title has-text-grey-light';
+    h4.textContent = 'Latest Repos'
+    this.repos.append(h4);
+    let output = '';
+    
+    repos.forEach(repo => {
+      output += `
+        <div class="card">
+          <div class="card-content">
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            <div class="tags">
+              <span class="tag is-primary">Stars: ${repo.stargazers_count}</span>
+              <span class="tag is-link">Watchers: ${repo.watchers_count}</span>
+              <span class="tag is-info">Folks: ${repo.folks_count}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    // Output repos
+    this.repos.append(output);
   }
 
   // Show alert message
